@@ -9,8 +9,7 @@ import { Person } from './Entities/person/person.entity';
 
 @Module({
   imports: [TypeOrmModule.forRoot(), Person]
-  },
+  ,
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

@@ -2,6 +2,8 @@ import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-person.dto';
 import { Person } from './person.entity';
 import { PersonsService } from './persons.service';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+
 
 @Controller('persons')
 export class UsersController {

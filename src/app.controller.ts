@@ -6,3 +6,4 @@ export class AppController {
   root(): string {
     return 'Hello World!';
   }
+}

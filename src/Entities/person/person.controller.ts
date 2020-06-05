@@ -1,13 +1,13 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-person.dto';
 import { Person } from './person.entity';
-import { PersonsService } from './persons.service';
+import { PersonService } from './persons.service';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 
 @Controller('persons')
-export class UsersController {
-  constructor(private readonly usersService: PersonsService) {}
+export class PersonsController {
+  constructor(private readonly usersService: PersonService) {}
 
   @Post()
   create(@Body() createUserDto: CreateUserDto): Promise<Person> {

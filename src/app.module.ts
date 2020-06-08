@@ -1,8 +1,5 @@
-import { PersonService } from './Entities/person/persons.service'
-import { Module, Dependencies } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { PersonsController } from './Entities/person/person.controller';
-
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PersonsModule } from './Entities/person/person.module';
 
@@ -18,8 +15,8 @@ import { PersonsModule } from './Entities/person/person.module';
       database: 'postgres',
       entities: ["dist/**/*.entity{.ts,.js}"],
       synchronize: true
-    }),PersonsModule
+    }), PersonsModule
   ],
   controllers: [AppController]
 })
-export class AppModule {}
+export class AppModule { }

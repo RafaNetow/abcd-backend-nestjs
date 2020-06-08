@@ -9,7 +9,7 @@ export class PersonService {
   constructor(
     @InjectRepository(Person)
     private readonly personsRepository: Repository<Person>,
-  ) {}
+  ) { }
 
   create(createUserDto: CreateUserDto): Promise<Person> {
     const person = new Person();
@@ -23,7 +23,7 @@ export class PersonService {
     person.birthDay = createUserDto.birthDay;
     person.phone = createUserDto.phone;
     person.nacionality = createUserDto.nacionality;
-    person.placeOfBirth = createUserDto.placeOfBirth;    
+    person.placeOfBirth = createUserDto.placeOfBirth;
     return this.personsRepository.save(person);
   }
 

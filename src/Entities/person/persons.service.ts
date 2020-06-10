@@ -13,6 +13,7 @@ export class PersonService {
 
   create(createUserDto: CreateUserDto): Promise<Person> {
     const person = new Person();
+    console.log(createUserDto);
     person.firstName = createUserDto.firstName;
     person.lastName = createUserDto.lastName;
     person.rne = createUserDto.rne;
@@ -20,8 +21,9 @@ export class PersonService {
     person.email = createUserDto.email;
     person.gender = createUserDto.gender;
     person.kindOfBlood = createUserDto.kindOfBlood;
-    person.birthDay = createUserDto.birthDay;
-    person.phone = createUserDto.phone;
+    person.birthDay = new Date();
+    person.photo = createUserDto.photo;
+    person.phone = 1234;
     person.nacionality = createUserDto.nacionality;
     person.placeOfBirth = createUserDto.placeOfBirth;
     return this.personsRepository.save(person);

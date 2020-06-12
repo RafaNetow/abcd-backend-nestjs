@@ -26,6 +26,7 @@
     "@nestjs/platform-express": "^7.0.0",
     "@nestjs/swagger": "^4.5.9",
     "@nestjs/typeorm": "^7.0.0",
+    "dotenv": "^8.2.0",
     "fastify-swagger": "^2.6.0",
     "pg": "^8.2.1",
     "postgresql": "0.0.1",

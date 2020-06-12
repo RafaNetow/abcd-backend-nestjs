@@ -6,16 +6,7 @@ import { PersonsModule } from './Entities/person/person.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'admin123',
-      database: 'postgres',
-      entities: ["dist/**/*.entity{.ts,.js}"],
-      synchronize: true
-    }), PersonsModule
+    TypeOrmModule.forRoot(), PersonsModule
   ],
   controllers: [AppController]
 })

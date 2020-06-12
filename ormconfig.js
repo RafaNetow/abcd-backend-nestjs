@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 module.exports = {
     type: "postgres",
 	host: process.env.TYPEORM_HOST,

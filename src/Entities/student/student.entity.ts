@@ -9,6 +9,6 @@ export class Student {
 
     @OneToOne(type => Person, { cascade: true })
     @JoinColumn()
-    profile: Person;
+    person: Person;
 
 }

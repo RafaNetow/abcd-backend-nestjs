@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-person.dto';
+import { CreatePersonDto } from './dto/create-person.dto';
 import { Person } from './person.entity';
 import { PersonService } from './persons.service';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
@@ -7,25 +7,25 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 @Controller('persons')
 export class PersonsController {
-  constructor(private readonly usersService: PersonService) {}
+  constructor(private readonly peopleService: PersonService) { }
 
   @Post()
-  create(@Body() createUserDto: CreateUserDto): Promise<Person> {
-    return this.usersService.create(createUserDto);
+  create(@Body() createUserDto: CreatePersonDto): Promise<Person> {
+    return this.peopleService.create(createUserDto);
   }
 
   @Get()
   findAll(): Promise<Person[]> {
-    return this.usersService.findAll();
+    return this.peopleService.findAll();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string): Promise<Person> {
-    return this.usersService.findOne(id);
+    return this.peopleService.findOne(id);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string): Promise<void> {
-    return this.usersService.remove(id);
+    return this.peopleService.remove(id);
   }
 }

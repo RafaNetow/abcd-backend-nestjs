@@ -5,6 +5,7 @@
 
 #other
 ormconfig.env
+.env
 
 # Logs
 logs

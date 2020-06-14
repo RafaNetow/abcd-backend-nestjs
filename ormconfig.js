@@ -1,5 +1,3 @@
-
-
 module.exports = {
     type: "postgres",
 	host: process.env.TYPEORM_HOST,
@@ -8,5 +6,5 @@ module.exports = {
 	password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
     synchronize: true,
-    entities: ["dist/**/*.entity{.ts,.js}"]
+    entities: [process.env.TYPEORM_ENTITIES]
 };

@@ -1,4 +1,4 @@
-import { Entity, Column, ManyToOne, OneToOne, JoinTable, OneToMany, PrimaryGeneratedColumn, JoinColumn } from "typeorm"
+import { Entity, OneToOne, PrimaryGeneratedColumn, JoinColumn } from "typeorm"
 import { Person } from '../person/person.entity'
 
 
@@ -9,6 +9,6 @@ export class Student {
 
     @OneToOne(type => Person, { cascade: true })
     @JoinColumn()
-    profile: Person;
+    person: Person;
 
 }

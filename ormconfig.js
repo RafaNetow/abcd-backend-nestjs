@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 
 module.exports = {
     type: "postgres",

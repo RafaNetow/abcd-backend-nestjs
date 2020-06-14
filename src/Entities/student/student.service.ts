@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { CreatePersonDto } from '../person/dto/create-person.dto';
 import { Student } from './student.entity';
 import { Person } from '../person/person.entity'
-import { PersonService } from '../person/persons.service';
+
 
 
 @Injectable()
@@ -12,9 +12,8 @@ export class StudentService {
     constructor(
         @InjectRepository(Student)
         private readonly studentRepository: Repository<Student>,
-        private readonly peopleRepository: Repository<Person>,
     ) { }
-
+    private readonly peopleRepository: Repository<Person>;
     async create(createUserDto: CreatePersonDto): Promise<Student> {
         const response = await this.peopleRepository.save(createUserDto);
         const student = new Student;

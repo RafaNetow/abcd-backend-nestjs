@@ -1,7 +1,10 @@
+import { ApiProperty } from '@nestjs/swagger';
 
-import { Person } from '../../person/person.entity'
 
 export class CreateHealthCDto {
+    @ApiProperty()
     tratamientos: String;
-    idPerson: number;
+
+    @ApiProperty()
+    idPerson: string;
 }

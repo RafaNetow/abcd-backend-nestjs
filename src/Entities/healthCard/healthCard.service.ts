@@ -12,12 +12,19 @@ export class healthCardService {
     constructor(
         @InjectRepository(HealthCard)
         private readonly healthCardRepository: Repository<HealthCard>,
+        private readonly peopleService: PersonService
+
     ) { }
 
-    private readonly peopleRepository: Repository<Person>;
-    create(createHealthCDto: CreateHealthCDto): Promise<HealthCard> {
-        let person = this.peopleRepository.findOne(createHealthCDto.idPerson)
-        const healthCard = new HealthCard()
+
+    async create(createHealthCDto: CreateHealthCDto): Promise<HealthCard> {
+
+        let person = new Person();
+        const healthCard = new HealthCard();
+        person = await this.peopleService.findOne(createHealthCDto.idPerson);
+        console.log(person);
+        healthCard.tratamientos = createHealthCDto.tratamientos;
+        healthCard.person = person;
         return this.healthCardRepository.save(healthCard);
     }
 

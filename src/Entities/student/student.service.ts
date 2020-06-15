@@ -14,8 +14,8 @@ export class StudentService {
         private readonly studentRepository: Repository<Student>,
     ) { }
     private readonly peopleRepository: Repository<Person>;
-    async create(createUserDto: CreatePersonDto): Promise<Student> {
-        const response = await this.peopleRepository.save(createUserDto);
+    async create(createPersonDto: CreatePersonDto): Promise<Student> {
+        const response = await this.peopleRepository.save(createPersonDto);
         const student = new Student;
         student.person = response;
         return this.studentRepository.save(student);

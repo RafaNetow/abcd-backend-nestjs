@@ -11,19 +11,21 @@ export class PersonService {
     private readonly personsRepository: Repository<Person>,
   ) { }
 
-  create(createUserDto: CreatePersonDto): Promise<Person> {
+  create(createPersonDto: CreatePersonDto): Promise<Person> {
     const person = new Person();
-    person.firstName = createUserDto.firstName;
-    person.lastName = createUserDto.lastName;
-    person.rne = createUserDto.rne;
-    person.address = createUserDto.address;
-    person.email = createUserDto.email;
-    person.gender = createUserDto.gender;
-    person.kindOfBlood = createUserDto.kindOfBlood;
-    person.birthDay = createUserDto.birthDay;
-    person.phone = createUserDto.phone;
-    person.nacionality = createUserDto.nacionality;
-    person.placeOfBirth = createUserDto.placeOfBirth;
+    person.firstName = createPersonDto.firstName;
+    person.lastName = createPersonDto.lastName;
+    person.rne = createPersonDto.rne;
+    person.address = createPersonDto.address;
+    person.email = createPersonDto.email;
+    person.gender = createPersonDto.gender;
+    person.kindOfBlood = createPersonDto.kindOfBlood;
+    person.birthDay = new Date();
+    person.phone = createPersonDto.phone;
+    person.nacionality = createPersonDto.nacionality;
+    person.placeOfBirth = createPersonDto.placeOfBirth;
+    person.photo = createPersonDto.photo;
+    console.log(person);
     return this.personsRepository.save(person);
   }
 
@@ -31,7 +33,7 @@ export class PersonService {
     return this.personsRepository.find();
   }
 
-  findOne(id: string): Promise<Person> {
+  async findOne(id: string): Promise<Person> {
     let response = this.personsRepository.findOne(id);
     return response;
   }

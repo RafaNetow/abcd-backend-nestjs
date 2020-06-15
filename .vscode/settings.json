@@ -1,0 +1,8 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        99
+    ],
+}

@@ -6,9 +6,8 @@ import { StudentsModule } from './Entities/student/student.module'
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(), StudentsModule
+    TypeOrmModule.forRoot(), PersonsModule, StudentsModule
   ],
   controllers: [AppController]
 })
 export class AppModule { }
-

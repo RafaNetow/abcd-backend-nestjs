@@ -32,10 +32,12 @@ export class PersonService {
   }
 
   findOne(id: string): Promise<Person> {
-    return this.personsRepository.findOne(id);
+    let response = this.personsRepository.findOne(id);
+    return response;
   }
 
   async remove(id: string): Promise<void> {
-    await this.personsRepository.delete(id);
+    let response = await this.personsRepository.delete(id);
+
   }
 }

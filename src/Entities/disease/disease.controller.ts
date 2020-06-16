@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { CreateDiseaseDto } from './dto/create-disease.dto';
 import { Disease } from './disease.entity';
-import { DiseaseService } from './disease.service';
+import { DiseaseService } from './diseases.service';
 
 
 

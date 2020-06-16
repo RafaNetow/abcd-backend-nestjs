@@ -3,11 +3,12 @@ import { AppController } from './app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PersonsModule } from './Entities/person/person.module';
 import { StudentsModule } from './Entities/student/student.module';
-import { HealthCardModule } from './Entities/healthCard/healthCard.module'
+import { HealthCardModule } from './Entities/healthCard/healthCard.module';
+import { DiseasesModule } from './Entities/disease/disease.module'
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(), PersonsModule, StudentsModule, HealthCardModule
+    TypeOrmModule.forRoot(), PersonsModule, StudentsModule, HealthCardModule, DiseasesModule
   ],
   controllers: [AppController]
 })

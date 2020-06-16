@@ -1,11 +1,10 @@
-import { Entity, PrimaryGeneratedColumn } from "typeorm"
-
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Disease {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    name: String;
-
+  @Column()
+  name: String;
 }

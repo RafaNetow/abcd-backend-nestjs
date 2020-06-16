@@ -1,10 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-
 export class CreateHealthCDto {
-    @ApiProperty()
-    tratamientos: String;
+  @ApiProperty()
+  tratamientos: string;
 
-    @ApiProperty()
-    idPerson: string;
+  @ApiProperty()
+  idPerson: string;
 }

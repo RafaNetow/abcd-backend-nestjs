@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 
 @Entity()
-export class Vaccine {
+export class Document {
     @PrimaryGeneratedColumn()
     id: number;
 

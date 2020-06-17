@@ -6,6 +6,7 @@ import { StudentsModule } from './Entities/student/student.module';
 import { HealthCardModule } from './Entities/healthCard/healthCard.module';
 import { VaccineModule } from './Entities/vaccine/vaccine.module';
 import { DiseasesModule } from './Entities/disease/disease.module';
+import { DocumentsModule } from './Entities/document/document.module';
 import { InstituteModule } from './Entities/institute/institutes.module';
 
 @Module({
@@ -17,6 +18,7 @@ import { InstituteModule } from './Entities/institute/institutes.module';
     DiseasesModule,
     VaccineModule,
     InstituteModule,
+    DocumentsModule
   ],
   controllers: [AppController],
 })

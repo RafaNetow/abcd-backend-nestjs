@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateVaccineDto {
+export class CreateDocumentDto {
     @ApiProperty()
     name: string;
 }

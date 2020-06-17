@@ -9,8 +9,8 @@ export class DocumentController {
     constructor(private readonly documentService: DocumentsService) { }
 
     @Post()
-    create(@Body() createDiseaseDto: CreateDocumentDto): Promise<Document> {
-        return this.documentService.create(createDiseaseDto);
+    create(@Body() createDocumentDto: CreateDocumentDto): Promise<Document> {
+        return this.documentService.create(createDocumentDto);
     }
 
     @Get()

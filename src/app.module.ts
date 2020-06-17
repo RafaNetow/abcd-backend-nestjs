@@ -8,6 +8,7 @@ import { VaccineModule } from './Entities/vaccine/vaccine.module';
 import { DiseasesModule } from './Entities/disease/disease.module';
 import { DocumentsModule } from './Entities/document/document.module';
 import { InstituteModule } from './Entities/institute/institutes.module';
+import { CoursesModule } from './Entities/course/course.module';
 
 @Module({
   imports: [
@@ -18,8 +19,9 @@ import { InstituteModule } from './Entities/institute/institutes.module';
     DiseasesModule,
     VaccineModule,
     InstituteModule,
-    DocumentsModule
+    DocumentsModule,
+    CoursesModule
   ],
   controllers: [AppController],
 })
-export class AppModule {}
+export class AppModule { }

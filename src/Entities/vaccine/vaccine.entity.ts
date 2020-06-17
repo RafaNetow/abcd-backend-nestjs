@@ -7,6 +7,6 @@ export class Vaccine {
     id: number;
 
     @Column()
-    name: String;
+    name: string;
 
 }

@@ -6,5 +6,5 @@ export class Disease {
   id: number;
 
   @Column()
-  name: String;
+  name: string;
 }

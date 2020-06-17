@@ -5,26 +5,26 @@ import { DocumentsService } from './document.service';
 
 
 @Controller('document')
-export class DocumentController {
-    constructor(private readonly documentService: DocumentsService) { }
+export class DocumentsController {
+    constructor(private readonly documentsService: DocumentsService) { }
 
     @Post()
     create(@Body() createDocumentDto: CreateDocumentDto): Promise<Document> {
-        return this.documentService.create(createDocumentDto);
+        return this.documentsService.create(createDocumentDto);
     }
 
     @Get()
     findAll(): Promise<Document[]> {
-        return this.documentService.findAll();
+        return this.documentsService.findAll();
     }
 
     @Get(':id')
     findOne(@Param('id') id: string): Promise<Document> {
-        return this.documentService.findOne(id);
+        return this.documentsService.findOne(id);
     }
 
     @Delete(':id')
     remove(@Param('id') id: string): Promise<void> {
-        return this.documentService.remove(id);
+        return this.documentsService.remove(id);
     }
 }

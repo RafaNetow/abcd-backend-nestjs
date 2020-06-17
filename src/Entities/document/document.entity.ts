@@ -7,6 +7,6 @@ export class Document {
     id: number;
 
     @Column()
-    name: String;
+    name: string;
 
 }

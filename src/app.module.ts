@@ -6,7 +6,7 @@ import { StudentsModule } from './Entities/student/student.module';
 import { HealthCardModule } from './Entities/healthCard/healthCard.module';
 import { VaccineModule } from './Entities/vaccine/vaccine.module';
 import { DiseasesModule } from './Entities/disease/disease.module';
-import { InstituteModule } from './Entities/institute/institute.module';
+import { InstituteModule } from './Entities/institute/institutes.module';
 
 @Module({
   imports: [

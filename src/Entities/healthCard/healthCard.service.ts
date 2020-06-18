@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateHealthCDto } from './dto/create-healthCard.dto';
-import { Repository } from 'typeorm';
+import { Repository, UpdateResult } from 'typeorm';
 import { HealthCard } from './healthCard.entity';
 import { Person } from "../person/person.entity"
 import { PersonService } from '../person/persons.service'
@@ -26,6 +26,11 @@ export class healthCardService {
         healthCard.tratamientos = createHealthCDto.tratamientos;
         healthCard.person = person;
         return this.healthCardRepository.save(healthCard);
+    }
+
+    async update(healthCard: HealthCard): Promise<UpdateResult> {
+
+        return await this.healthCardRepository.update(healthCard.id, healthCard);
     }
 
     async findAll(): Promise<HealthCard[]> {

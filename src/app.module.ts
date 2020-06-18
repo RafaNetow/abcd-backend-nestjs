@@ -10,6 +10,7 @@ import { DocumentsModule } from './Entities/document/document.module';
 import { InstituteModule } from './Entities/institute/institutes.module';
 import { CoursesModule } from './Entities/course/courses.module';
 import { ModalitiesModule } from './Entities/modality/modalities.module';
+import { HealthCard_VaccineModule } from './Entities/health-card_vaccine/healthCard_vaccine.module'
 
 
 @Module({
@@ -24,6 +25,7 @@ import { ModalitiesModule } from './Entities/modality/modalities.module';
     DocumentsModule,
     CoursesModule,
     ModalitiesModule,
+    HealthCard_VaccineModule
   ],
   controllers: [AppController],
 })

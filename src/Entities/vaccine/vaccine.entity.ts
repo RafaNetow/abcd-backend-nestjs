@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from "typeorm";
+import { HealthCard } from '../healthCard/healthCard.entity'
 
 
 @Entity()
@@ -8,5 +9,8 @@ export class Vaccine {
 
     @Column()
     name: string;
+
+    @ManyToMany(type => HealthCard, healthCard => healthCard.vaccines)
+    healthCards: HealthCard[];
 
 }

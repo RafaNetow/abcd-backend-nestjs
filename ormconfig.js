@@ -1,5 +1,5 @@
 module.exports = {
-    type: "postgres",
+    type: process.env.TYPEORM_CONNECTION,
     host: process.env.TYPEORM_HOST,
     port: parseInt(process.env.TYPEORM_PORT),
     username: process.env.TYPEORM_USERNAME,

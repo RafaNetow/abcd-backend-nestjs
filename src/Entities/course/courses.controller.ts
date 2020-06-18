@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { Course } from './course.entity';
-import { CoursesService } from './course.service';
+import { CoursesService } from './courses.service';
 
 
 @Controller('course')

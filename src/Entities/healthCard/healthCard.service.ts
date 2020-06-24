@@ -22,7 +22,7 @@ export class healthCardService {
         let person = new Person();
         const healthCard = new HealthCard();
         person = await this.peopleService.findOne(createHealthCDto.idPerson);
-        console.log(person);
+        console.log("...", person);
         healthCard.tratamientos = createHealthCDto.tratamientos;
         healthCard.person = person;
         return this.healthCardRepository.save(healthCard);

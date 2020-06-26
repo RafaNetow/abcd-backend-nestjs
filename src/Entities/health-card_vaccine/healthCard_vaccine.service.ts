@@ -23,15 +23,7 @@ export class healthCard_vaccineService {
     healthCard = await this.healthCardService.findOne(
       createModalityDto.idHealthCard,
     );
-    console.log(healthCard);
-    if (healthCard.vaccines) {
-      console.log('entro');
-      healthCard.vaccines.push(vaccine);
-    } else {
-      console.log('..');
-      healthCard.vaccines = [vaccine];
-    }
-    console.log(healthCard);
+    healthCard.vaccines.push(vaccine);
     return this.healthCardService.update(healthCard);
   }
 }

@@ -1,4 +1,3 @@
-console.log('testings');
 module.exports = {
   type: process.env.TYPEORM_CONEC,
   host: process.env.TYPEORM_HOST,

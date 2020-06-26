@@ -1,16 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from "typeorm";
-import { HealthCard } from '../healthCard/healthCard.entity'
-
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
+import { HealthCard } from '../healthCard/healthCard.entity';
 
 @Entity()
 export class Vaccine {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @ManyToMany(type => HealthCard, healthCard => healthCard.vaccines)
-    healthCards: HealthCard[];
-
+  @ManyToMany(
+    type => HealthCard,
+    healthCard => healthCard.vaccines,
+    { cascade: true },
+  )
+  healthCards: HealthCard[];
 }

@@ -16,7 +16,7 @@ export class healthCard_vaccineService {
 
   async create(
     createModalityDto: CreateHealthCard_VaccineDto,
-  ): Promise<UpdateResult> {
+  ): Promise<HealthCard> {
     let vaccine = new Vaccine();
     let healthCard = new HealthCard();
     vaccine = await this.vaccineService.findOne(createModalityDto.idVaccine);
@@ -32,7 +32,6 @@ export class healthCard_vaccineService {
       healthCard.vaccines = [vaccine];
     }
     console.log(healthCard);
-    this.healthCardService.create(healthCard);
     return this.healthCardService.update(healthCard);
   }
 }

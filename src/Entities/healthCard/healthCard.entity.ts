@@ -9,7 +9,7 @@ import { Person } from '../person/person.entity';
 
 @Entity()
 export class HealthCard {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @Column()

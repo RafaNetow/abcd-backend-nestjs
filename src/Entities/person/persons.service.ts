@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, DeleteResult } from 'typeorm';
 import { CreatePersonDto } from './dto/create-person.dto';
 import { Person } from './person.entity';
 
@@ -25,6 +25,9 @@ export class PersonService {
     person.nacionality = createPersonDto.nacionality;
     person.placeOfBirth = createPersonDto.placeOfBirth;
     person.photo = createPersonDto.photo;
+    person.ownHouse = createPersonDto.ownHouse;
+    person.workPlace = createPersonDto.workPlace;
+
     return this.personsRepository.save(person);
   }
 
@@ -33,11 +36,12 @@ export class PersonService {
   }
 
   async findOne(id: string): Promise<Person> {
-    let response = this.personsRepository.findOne(id);
+    const response = this.personsRepository.findOne(id);
     return response;
   }
 
-  async remove(id: string): Promise<void> {
-    let response = await this.personsRepository.delete(id);
+  async remove(id: string): Promise<DeleteResult> {
+    const response = await this.personsRepository.delete(id);
+    return response;
   }
 }

@@ -1,4 +1,3 @@
-
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreatePersonDto {
@@ -24,7 +23,7 @@ export class CreatePersonDto {
   phone: number;
 
   @ApiProperty()
-  kindOfBlood: string
+  kindOfBlood: string;
 
   @ApiProperty()
   photo: string;
@@ -37,4 +36,10 @@ export class CreatePersonDto {
 
   @ApiProperty()
   rne: number;
+
+  @ApiProperty()
+  ownHouse: string;
+
+  @ApiProperty()
+  workPlace: string;
 }

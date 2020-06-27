@@ -9,7 +9,7 @@ export class PersonService {
   constructor(
     @InjectRepository(Person)
     private readonly personsRepository: Repository<Person>,
-  ) { }
+  ) {}
 
   create(createPersonDto: CreatePersonDto): Promise<Person> {
     const person = new Person();
@@ -25,7 +25,6 @@ export class PersonService {
     person.nacionality = createPersonDto.nacionality;
     person.placeOfBirth = createPersonDto.placeOfBirth;
     person.photo = createPersonDto.photo;
-    console.log(person);
     return this.personsRepository.save(person);
   }
 
@@ -40,6 +39,5 @@ export class PersonService {
 
   async remove(id: string): Promise<void> {
     let response = await this.personsRepository.delete(id);
-
   }
 }

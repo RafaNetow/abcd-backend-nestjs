@@ -8,31 +8,29 @@ import { PersonService } from '../person/persons.service';
 
 @Injectable()
 export class StudentService {
-    constructor(
-        @InjectRepository(Student)
-        private readonly studentRepository: Repository<Student>,
-        private readonly peopleService: PersonService,
-    ) { }
+  constructor(
+    @InjectRepository(Student)
+    private readonly studentRepository: Repository<Student>,
+    private readonly peopleService: PersonService,
+  ) {}
 
+  async create(createPersonDto: CreatePersonDto): Promise<Student> {
+    let person = new Person();
+    person = await this.peopleService.create(createPersonDto);
+    const student = new Student();
+    student.person = person;
+    return this.studentRepository.save(student);
+  }
 
+  async findAll(): Promise<Student[]> {
+    return this.studentRepository.find();
+  }
 
-    async create(createPersonDto: CreatePersonDto): Promise<Student> {
-        let person = new Person();
-        person = await this.peopleService.create(createPersonDto);
-        const student = new Student();
-        student.person = person;
-        return this.studentRepository.save(student);
-    }
+  findOne(id: string): Promise<Student> {
+    return this.studentRepository.findOne(id, { relations: ['references'] });
+  }
 
-    async findAll(): Promise<Student[]> {
-        return this.studentRepository.find();
-    }
-
-    findOne(id: string): Promise<Student> {
-        return this.studentRepository.findOne(id);
-    }
-
-    async remove(id: string): Promise<void> {
-        await this.studentRepository.delete(id);
-    }
+  async remove(id: string): Promise<void> {
+    await this.studentRepository.delete(id);
+  }
 }

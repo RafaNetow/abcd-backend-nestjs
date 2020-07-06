@@ -12,7 +12,7 @@ import { Vaccine } from '../vaccine/vaccine.entity'
 
 @Entity()
 export class HealthCard {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   @Column()

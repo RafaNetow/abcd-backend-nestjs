@@ -1,14 +1,12 @@
-import { Entity, OneToOne, PrimaryGeneratedColumn, JoinColumn } from "typeorm"
-import { Person } from '../person/person.entity'
-
+import { Entity, OneToOne, PrimaryGeneratedColumn, JoinColumn } from 'typeorm';
+import { Person } from '../person/person.entity';
 
 @Entity()
 export class Student {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: number;
 
-    @OneToOne(type => Person, { cascade: true })
-    @JoinColumn()
-    person: Person;
-
+  @OneToOne(type => Person, { cascade: true })
+  @JoinColumn()
+  person: Person;
 }

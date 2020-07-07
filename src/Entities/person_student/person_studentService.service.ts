@@ -15,6 +15,10 @@ export class personStudent {
   async create(createModalityDto: CreatePersonStudentDto): Promise<Student> {
     let student = new Student();
     let person = new Person();
+    person = await this.personService.findOne(createModalityDto.idPerson);
+    student = await this.studentService.findOne(createModalityDto.idStudent);
+    student.references.push(person);
+    return this.studentService.update(student);
 
     /*
     let vaccine = new Vaccine();

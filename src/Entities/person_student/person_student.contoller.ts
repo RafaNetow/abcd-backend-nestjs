@@ -1,7 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { CreatePersonStudentDto } from './dto/create-person_student.dto';
-import { CreatePersonStudentDto } from './healthCard_vaccine.service';
-import { UpdateEvent, UpdateResult } from 'typeorm';
+import { CreatePersonStudentDto } from './dto/create-person_student';
 import { HealthCard } from '../healthCard/healthCard.entity';
 
 @Controller('HealthCard_Vaccine')

@@ -22,6 +22,10 @@ export class StudentService {
     return this.studentRepository.save(student);
   }
 
+  async update(student: Student): Student | PromiseLike<Student> {
+    return await this.studentRepository.save(student);
+  }
+
   async findAll(): Promise<Student[]> {
     return this.studentRepository.find();
   }

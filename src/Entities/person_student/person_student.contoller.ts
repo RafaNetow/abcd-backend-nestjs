@@ -1,14 +1,13 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { CreatePersonStudentDto } from './dto/create-person_student';
-import { HealthCard } from '../healthCard/healthCard.entity';
+import { Student } from '../student/student.entity';
+import { PersonStudentService } from './person_studentService.service';
 
 @Controller('HealthCard_Vaccine')
 export class CreatePersonStudentController {
-  constructor(private readonly healthCardService: healthCard_vaccineService) {}
+  constructor(private readonly personStudentService: PersonStudentService) {}
   @Post()
-  create(
-    @Body() healthCard_vaccineDto: CreatePersonStudentDto,
-  ): Promise<HealthCard> {
-    return this.healthCardService.create(healthCard_vaccineDto);
+  create(@Body() personStudentDto: CreatePersonStudentDto): Promise<Student> {
+    return this.personStudentService.create(personStudentDto);
   }
 }

@@ -6,7 +6,7 @@ import { Person } from '../person/person.entity';
 import { Student } from '../student/student.entity';
 
 @Injectable()
-export class personStudent {
+export class PersonStudentService {
   constructor(
     private readonly personService: PersonService,
     private readonly studentService: StudentService,

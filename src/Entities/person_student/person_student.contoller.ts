@@ -3,7 +3,7 @@ import { CreatePersonStudentDto } from './dto/create-person_student';
 import { Student } from '../student/student.entity';
 import { PersonStudentService } from './person_studentService.service';
 
-@Controller('HealthCard_Vaccine')
+@Controller('RefrenceStudent')
 export class CreatePersonStudentController {
   constructor(private readonly personStudentService: PersonStudentService) {}
   @Post()

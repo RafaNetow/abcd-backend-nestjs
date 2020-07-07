@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { VaccineService } from '../vaccine/vaccine.service';
+import { healthCardService } from '../healthCard/healthCard.service';
 import { CreateHealthCard_VaccineDto } from './dto/create-healthCard_vaccine.dto';
 import { Vaccine } from '../vaccine/vaccine.entity';
 import { HealthCard } from '../healthCard/healthCard.entity';

@@ -22,7 +22,7 @@ export class StudentService {
     return this.studentRepository.save(student);
   }
 
-  async update(student: Student): Student | PromiseLike<Student> {
+  async update(student: Student): Promise<Student> {
     return await this.studentRepository.save(student);
   }
 

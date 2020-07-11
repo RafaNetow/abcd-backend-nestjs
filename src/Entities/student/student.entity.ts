@@ -1,4 +1,3 @@
-
 import {
   Entity,
   OneToOne,
@@ -7,7 +6,6 @@ import {
   JoinTable,
   ManyToMany,
 } from 'typeorm';
->>>>>>> working on first step to service person_student
 import { Person } from '../person/person.entity';
 
 @Entity()

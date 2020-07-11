@@ -4,7 +4,7 @@ import { healthCard_vaccineService } from './healthCard_vaccine.service';
 import { UpdateEvent, UpdateResult } from 'typeorm';
 import { HealthCard } from '../healthCard/healthCard.entity';
 
-@Controller('HealthCard_Vaccine')
+@Controller('HealthCardVaccine')
 export class CreateHealthCard_VaccineController {
   constructor(private readonly healthCardService: healthCard_vaccineService) {}
 

@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
+import { Student } from '../student/student.entity';
 
 @Entity()
 export class Person {
@@ -46,4 +47,11 @@ export class Person {
 
   @Column()
   ownHouse: string;
+
+  @ManyToMany(
+    type => Student,
+    student => student.references,
+    { cascade: true },
+  )
+  students: Student[];
 }

@@ -10,8 +10,8 @@ import { DocumentsModule } from './Entities/document/document.module';
 import { InstituteModule } from './Entities/institute/institutes.module';
 import { CoursesModule } from './Entities/course/courses.module';
 import { ModalitiesModule } from './Entities/modality/modalities.module';
-import { HealthCard_VaccineModule } from './Entities/health-card_vaccine/healthCard_vaccine.module'
-
+import { HealthCardVaccineModule } from './Entities/health-card_vaccine/healthCard_vaccine.module';
+import { ReferenceStudentModule } from './Entities/person_student/person_student.module';
 
 @Module({
   imports: [
@@ -25,8 +25,9 @@ import { HealthCard_VaccineModule } from './Entities/health-card_vaccine/healthC
     DocumentsModule,
     CoursesModule,
     ModalitiesModule,
-    HealthCard_VaccineModule
+    HealthCardVaccineModule,
+    ReferenceStudentModule,
   ],
   controllers: [AppController],
 })
-export class AppModule { }
+export class AppModule {}

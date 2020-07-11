@@ -4,10 +4,9 @@ import { CreateHealthCard_VaccineController } from './healthCard_vaccine.control
 import { HealthCardModule } from '../healthCard/healthCard.module';
 import { VaccineModule } from '../vaccine/vaccine.module';
 
-
 @Module({
-    imports: [HealthCardModule, VaccineModule],
-    providers: [healthCard_vaccineService],
-    controllers: [CreateHealthCard_VaccineController],
+  imports: [HealthCardModule, VaccineModule],
+  providers: [healthCard_vaccineService],
+  controllers: [CreateHealthCard_VaccineController],
 })
-export class HealthCard_VaccineModule { }
+export class HealthCardVaccineModule {}

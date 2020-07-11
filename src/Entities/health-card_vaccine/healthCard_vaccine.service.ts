@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, UpdateResult } from 'typeorm';
-import { healthCardService } from '../healthCard/healthCard.service';
 import { VaccineService } from '../vaccine/vaccine.service';
+import { healthCardService } from '../healthCard/healthCard.service';
 import { CreateHealthCard_VaccineDto } from './dto/create-healthCard_vaccine.dto';
 import { Vaccine } from '../vaccine/vaccine.entity';
 import { HealthCard } from '../healthCard/healthCard.entity';
